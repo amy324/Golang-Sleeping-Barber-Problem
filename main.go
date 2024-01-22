@@ -20,8 +20,8 @@ func main() {
 	rng := rand.New(rand.NewSource(seed))
 
 	// print welcome message
-	color.Yellow("The Sleeping Barber Problem")
-	color.Yellow("---------------------------")
+	color.Green("The Sleeping Barber Problem")
+	color.Green("---------------------------")
 
 	// create channels if needed
 	clientChan := make(chan string, seatCapacity)
@@ -41,6 +41,10 @@ func main() {
 
 	// add barbers
 	shop.addBarber("Frank")
+	shop.addBarber("Gerard")
+	shop.addBarber("Milton")
+	shop.addBarber("Patrick")
+	shop.addBarber("Jim")
 
 	// start the barbershop (go routine)
 	shopClosing := make(chan bool)

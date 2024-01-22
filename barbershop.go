@@ -45,10 +45,10 @@ func (shop *BarberShop) addBarber(barber string) {
 	}()
 }
 
-func (shop *BarberShop) cutHair(barber, client string) {
+func (shop *BarberShop) cutHair(barber string, client string) {
 	color.Cyan("%s is cutting %s's hair.", barber, client)
 	time.Sleep(shop.HairCutDuration)
-	color.Cyan("%s has finished cutting %'s hair", barber, client)
+	color.Cyan("%s has finished cutting %s's hair", barber, client)
 }
 
 func (shop *BarberShop) sendBarberHome(barber string) {
@@ -66,8 +66,8 @@ func (shop *BarberShop) closeShopForToday() {
 	}
 	close(shop.BarbersDoneChan)
 
-	color.Cyan("--------------------------------------------------------------")
-	color.Cyan("The barbershop has closed for today and everyone has gone home")
+	color.Green("--------------------------------------------------------------")
+	color.Green("The barbershop has closed for today and everyone has gone home")
 }
 
 func (shop *BarberShop) addClient(client string) {
@@ -76,7 +76,7 @@ func (shop *BarberShop) addClient(client string) {
 	if shop.Open {
 		select {
 		case shop.ClientsChan <- client: 
-		color.Yellow("%s takes a seat in the wait")
+		color.Yellow("%s takes a seat in the waiting room.", client)
 		default:
 			color.Magenta("The waiting room is full, so %s leaves.", client)
 		}
