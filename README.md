@@ -6,10 +6,11 @@ Sleeping Barber Problem in Golang
 Overview
 --------
 
+This project is part of a series of short CLI-based programs inspired by classic computer science problems. This series is to demonstrate using Goroutines and Go concurrency features to write solutions to these classic problems.
+
 This is a Golang implementation of the Sleeping Barber Problem. The Sleeping Barber Problem is a classic synchronization and concurrency problem, where there is a barbershop with a certain number of chairs for waiting customers and a group of barbers who cut hair. If the waiting room is full, clients leave; otherwise, they take a seat. If the barber is free, a waiting client is served immediately; otherwise, the client waits in the waiting room. If a barber is free and there are currently no waiting clients, the barber can take a nap.
  The problem is to design a system that ensures the correct and efficient handling of customers and barbers while respecting certain constraints.#The barbers serve clients by cutting their hair, and clients may arrive at any time.
 
- This project is part of a series of short CLI-based projects inspired by classic computer science problems. I have been reading up on computer science theories and thought there is no better way to test my understanding than with mini golang CLI projects.
 
 Problem Description
 -------------------
